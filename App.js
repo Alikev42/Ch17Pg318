@@ -1,16 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import styles from "./styles.js"
+
+const data = new Array(100).fill(null).map((v,i) => ({key: i.toString(), value: `Item ${i}`}));
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <FlatList data={data} renderItem={({item}) => <Text style={styles.item}>{item.value}</Text>} />
     </View>
   );
 }
 
+/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -19,3 +22,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {Text} from "react-native";
 
-const arrows = new Map([[true, "vvv"], [false, "^^^"]]);
+const arrows = new Map([[true, "v"], [false, "^"]]);
 
 export default function ListSort ( {onSort, asc} ) {
     return <Text onPress={onSort}>{arrows.get(asc)}</Text>;
